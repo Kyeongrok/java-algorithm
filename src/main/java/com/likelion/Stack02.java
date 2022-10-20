@@ -19,13 +19,10 @@ public class Stack02 {
 
     public void push(int value) {
         // 10을 넣으면 arr[0] = 10
-        this.arr[top] = value;
-        this.top++;
+        this.arr[this.top++] = value;
     }
 
     public int pop() {
-        int value = this.arr[this.top-1];// this.top = 2
-        this.top --;
-        return value;
+        return this.arr[--this.top];// this.top = 2
     }
 }
