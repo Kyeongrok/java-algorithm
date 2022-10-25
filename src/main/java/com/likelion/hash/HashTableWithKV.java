@@ -43,6 +43,10 @@ public class HashTableWithKV {
 
     public void insert(String key, Integer value) {
         int hashCode = hash(key);
+        if (this.table[hashCode] == null) {
+            this.table[hashCode] = new ArrayList<>();
+        }
+        // 넣을 때 중복 Check를 할 수 있다.
         this.table[hashCode].add(new Node(key, value));
         System.out.println(key + " " + hashCode + "방에 저장이 완료 되었습니다.");
     }
