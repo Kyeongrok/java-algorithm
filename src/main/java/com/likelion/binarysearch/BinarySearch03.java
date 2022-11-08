@@ -24,7 +24,5 @@ public class BinarySearch03 {
                 startIdx = midIndex + 1;
             }
         }
-
-
     }
 }
