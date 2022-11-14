@@ -1,4 +1,4 @@
-package com.likelion.selectionsort;
+package com.likelion.sort.selectionsort;
 
 import java.util.Arrays;
 
