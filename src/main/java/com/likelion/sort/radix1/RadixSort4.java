@@ -40,10 +40,15 @@ public class RadixSort4 {
         for (int i = 0; i < queueArr.length; i++) {
             queueArr[i] = new ArrayDeque<>();
         }
-        // 일의 자리가 맞는 곳에 넣는다
+
+        // digit가 맞는 곳에 넣는다 1의자리, 10의자리, 100의자리 ...
         for (var i : arr) {
-            int diviser = (int)Math.pow(10, digit - 1);
-            queueArr[Math.floorDiv(i, diviser) % 10].add(i); // i % 10해서 일의 자리를 구함
+            //
+            int diviser = (int)Math.pow(10, digit - 1); // 10^0 10^1 10^2 ...
+            // i % 10해서 일의 자리를 구함
+            queueArr[Math.floorDiv(i, diviser) % 10].add(i);
+            // ex) 23 / 10 = 2를 10으로 나눈 나머지
+            // ex) 233을 10의 자리인 3자리에 넣으려면 23으로 해야 하므로 233 / 10 = 23를 10으로 나눈 나머지 3
         }
 
         // 꺼내서 arr에 다시 넣는다
