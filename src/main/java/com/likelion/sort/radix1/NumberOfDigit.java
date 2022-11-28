@@ -1,4 +1,4 @@
-package com.likelion.sort.radix;
+package com.likelion.sort.radix1;
 
 public class NumberOfDigit {
     public int maxDigits(int[] arr) {

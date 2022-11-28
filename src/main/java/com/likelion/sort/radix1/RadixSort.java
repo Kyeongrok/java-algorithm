@@ -1,9 +1,6 @@
-package com.likelion.sort.radix;
+package com.likelion.sort.radix1;
 
-import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.Queue;
-import java.util.Random;
 
 public class RadixSort {
     public static void main(String[] args) {
