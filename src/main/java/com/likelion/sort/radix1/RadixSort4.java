@@ -3,14 +3,6 @@ package com.likelion.sort.radix1;
 import java.util.*;
 
 public class RadixSort4 {
-    public int maxDigits(int[] arr) {
-        int maxDigit = 0;
-        for (int i = 0; i < arr.length; i++) {
-            int digits = (int) (Math.log10(arr[i]) + 1);
-            if(maxDigit < digits) maxDigit = digits;
-        }
-        return maxDigit;
-    }
     public int[] getDigits(int[] arr) {
         Set<Integer> digits = new HashSet<>(); // Set에 넣으면 중복 제거가 됨
         for (int i = 0; i < arr.length; i++) {
@@ -69,6 +61,5 @@ public class RadixSort4 {
             arr = rs.sortByDigit(digit, arr);
             System.out.println(Arrays.toString(arr));
         }
-
     }
 }

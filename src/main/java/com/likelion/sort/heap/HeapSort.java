@@ -15,30 +15,32 @@ public class HeapSort {
     }
 
     public void heapify(int[] arr, int i) { // i는 부모 idx
-        int left = i * 2 + 1;
-        int right = i * 2 + 2;
-        int greater;
+        int leftIdx = i * 2 + 1;
+        int rightIdx = i * 2 + 2;
+        int greaterIdx;
 
-        if (left < arr.length && arr[left] > arr[i]) {
-            greater = left;
+        if (leftIdx < arr.length && arr[leftIdx] > arr[i]) {
+            greaterIdx = leftIdx;
         } else {
-            greater = i;
+            greaterIdx = i;
         }
 
-        if (right < arr.length && arr[right] > arr[greater]) {
-            greater = right;
+        if (rightIdx < arr.length && arr[rightIdx] > arr[greaterIdx]) {
+            greaterIdx = rightIdx;
         }
 
-        if (greater != i) {
-            arr = swap(arr, i, greater);
-            heapify(arr, greater);
+        if (greaterIdx != i) {
+            arr = swap(arr, i, greaterIdx);
+            heapify(arr, greaterIdx);
         }
-        System.out.println(Arrays.toString(arr));
     }
 
     public static void main(String[] args) {
         HeapSort hs = new HeapSort();
-        hs.heapify(new int[]{2, 9, 3}, 0);
-        hs.heapify(new int[]{2, 3, 9}, 0);
+        int[] arr = new int[]{1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
+        for (int i = (arr.length - 1) / 2; i >= 0; i--) {
+            hs.heapify(arr, i);
+            System.out.println(Arrays.toString(arr));
+        }
     }
 }
