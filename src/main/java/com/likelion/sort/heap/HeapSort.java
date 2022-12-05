@@ -42,5 +42,8 @@ public class HeapSort {
             hs.heapify(arr, i);
             System.out.println(Arrays.toString(arr));
         }
+        for (int i = arr.length - 1; i > 0 ; i--) {
+
+        }
     }
 }
