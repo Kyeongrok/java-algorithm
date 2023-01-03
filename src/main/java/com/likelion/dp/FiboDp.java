@@ -15,7 +15,7 @@ public class FiboDp {
         return fibRecur(n - 1) + fibRecur(n - 2);
     }
     public static void main(String[] args) {
-        var r = fib(60, new int[60 + 1]);
+        var r = fib(40, new int[70 + 1]);
         System.out.println(r);
 //        System.out.println(fibRecur(45));
     }
