@@ -1,4 +1,4 @@
-package com.likelion;
+package com.likelion.stack;
 
 import java.util.ArrayList;
 import java.util.List;

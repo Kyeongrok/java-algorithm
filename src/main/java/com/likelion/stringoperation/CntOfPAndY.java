@@ -1,4 +1,4 @@
-package com.likelion;
+package com.likelion.stringoperation;
 
 public class CntOfPAndY {
     boolean solution(String s) {

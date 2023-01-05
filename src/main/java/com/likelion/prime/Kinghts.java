@@ -1,4 +1,4 @@
-package com.likelion;
+package com.likelion.prime;
 
 public class Kinghts {
     public static int isPrime(int n, int limit, int power) {

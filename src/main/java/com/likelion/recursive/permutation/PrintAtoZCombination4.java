@@ -1,4 +1,4 @@
-package com.likelion.permutation;
+package com.likelion.recursive.permutation;
 
 import java.util.HashSet;
 import java.util.Set;

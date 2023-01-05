@@ -1,4 +1,4 @@
-package com.likelion.permutation;
+package com.likelion.recursive.permutation;
 
 public class CombinationAlphabet {
     public void printStrings(int n, String prefix) {

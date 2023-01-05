@@ -1,4 +1,4 @@
-package com.likelion.permutation;
+package com.likelion.recursive.permutation;
 
 public class PrintAtoZCombination2 {
     public static void printAlphabet(char c, String prefix) {

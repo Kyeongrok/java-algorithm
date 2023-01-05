@@ -1,4 +1,4 @@
-package com.likelion.permutation;
+package com.likelion.recursive.permutation;
 
 public class CA4 {
     // parameter에 "A"를 붙여 출력하는 로직

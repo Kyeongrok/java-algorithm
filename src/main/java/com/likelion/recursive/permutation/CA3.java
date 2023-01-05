@@ -1,4 +1,4 @@
-package com.likelion.permutation;
+package com.likelion.recursive.permutation;
 
 public class CA3 {
     public static void print(String prefix, int depth) {

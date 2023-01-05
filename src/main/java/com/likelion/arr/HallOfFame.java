@@ -1,4 +1,4 @@
-package com.likelion;
+package com.likelion.arr;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;

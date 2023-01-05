@@ -1,4 +1,4 @@
-package com.likelion.permutation;
+package com.likelion.recursive.permutation;
 
 public class CombinationOfAlphabet {
     private static final String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

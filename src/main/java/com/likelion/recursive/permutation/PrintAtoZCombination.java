@@ -1,6 +1,6 @@
-package com.likelion.permutation;
+package com.likelion.recursive.permutation;
 
-public class PrintAtoZ {
+public class PrintAtoZCombination {
     public static void printAlphabet(char c) {
         if (c > 'Z') return;
         System.out.println(c);

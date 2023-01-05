@@ -1,4 +1,4 @@
-package com.likelion;
+package com.likelion.stringoperation;
 
 public class CntOfpy {
     public boolean solution(String s) {

@@ -1,4 +1,4 @@
-package com.likelion;
+package com.likelion.remainder;
 
 public class SumOfDivisor {
     public int solution(int num) {
