@@ -32,22 +32,24 @@ public class Solution2 {
     }
 
     public static int solution(String S) {
-        int result = -1;
         for (int i = 0; i < S.length(); i++) {
             for (int j = i + 1; j <= S.length(); j++) {
                 String substr = S.substring(i, j);
-                if(isBalanced(substr)){
-//                    System.out.println(substr);
-                    result = substr.length();
+//                System.out.println(substr);
+                boolean is = isBalanced(substr);
+//                System.out.println(is);
+                if(is){
+                    return substr.length();
                 }
             }
         }
-        return result;
+        return -1;
     }
 
     public static void main(String[] args) {
-//        System.out.println(isBalanced("azABaabza"));
-//        System.out.println(solution("CATattac"));
+        System.out.println(solution("azABaabza"));
+        System.out.println(solution("CATattac"));
+//        System.out.println(isBalanced("CATattac"));
         System.out.println(solution("azABaabza"));
     }
 }
