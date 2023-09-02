@@ -23,7 +23,10 @@ public class Codeup2605 {
         }
         return map;
     }
-    public static int dfs(int r, int c, int[][] visited, int[][] map, Stack<int[]> st) {
+    public static int dfs(int r, int c, int[][] visited, int[][] map) {
+
+        int count = 1;
+        visited[r][c] = 1;
 
         // map의 범위 안에서 상하좌우로 이동한다.
         int[][] directions = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
@@ -31,18 +34,17 @@ public class Codeup2605 {
             // 같은 숫자일때만 dfs를 재귀 호출 하면서 이동한다.
             int nextRow = r + directions[i][0];
             int nextColumn = c + directions[i][1];
-            if (nextRow > 0 && nextRow < directions.length &&
-                    nextColumn > 0 && nextColumn < directions.length &&
-                    map[r][c] == map[nextRow][nextColumn] &&
-                    visited[nextRow][nextColumn] == 0)
-            {
-                // 같은 숫자면 Stack에 넣는다.
-                visited[nextRow][nextColumn] = 1;
-                st.push(new int[]{nextRow, nextColumn});
-                dfs(nextRow, nextColumn, visited, map, st);
+            System.out.printf("r:%d c:%d\n", nextRow, nextColumn);
+            if (nextRow > 0 && nextRow < directions.length && nextColumn > 0 && nextColumn < directions.length){
+                if(map[r][c] == map[nextRow][nextColumn] && visited[nextRow][nextColumn] == 0){
+                    // 같은 숫자면 Stack에 넣는다.
+                    System.out.printf("---cnt:%d---\n", count);
+                    count += dfs(nextRow, nextColumn, visited, map);
+                }
             }
         }
-        return 0;
+
+        return count;
     }
     public static void print2xArr(int[][] arr) {
         for (int i = 1; i < arr.length; i++) {
@@ -57,16 +59,20 @@ public class Codeup2605 {
         int n = 7;
         int[][] map = new int[n + 1][n + 1];
         int[][] visited = new int[n + 1][n + 1];
-        Stack<int[]> st = new Stack<>();
         map = initMap(7, 7);
-        // 방문한 곳 표시
-        visited[1][1] = 1;
 
-        for (int r = 1; r < visited.length; r++) {
-            for (int c = 1; c < visited.length; c++) {
-                dfs(r, c, visited, map, st);
-                System.out.println(st.size());
+        print2xArr(map);
+
+        int answer = 0;
+        for (int r = 1; r <= n; r++) {
+            for (int c = 1; c <= n; c++) {
+                if(visited[r][c] == 0){
+                    int cnt = dfs(r, c, visited, map);
+//                    print2xArr(visited);
+                    if(cnt >= 3) System.out.printf("cnt:%d answer:%d\n", cnt, ++answer);
+                }
             }
         }
+        System.out.println(answer);
     }
 }
