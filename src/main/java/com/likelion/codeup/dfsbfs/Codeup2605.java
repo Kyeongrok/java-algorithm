@@ -1,7 +1,12 @@
 package com.likelion.codeup.dfsbfs;
 
+import java.util.Scanner;
 import java.util.Stack;
 
+/*
+Codeup 2605 캔디팡
+DFS
+ */
 public class Codeup2605 {
     public static int[][] initMap(int rowCnt, int columnCnt) {
         int[][] map = new int[rowCnt + 1][columnCnt + 1];
@@ -34,11 +39,8 @@ public class Codeup2605 {
             // 같은 숫자일때만 dfs를 재귀 호출 하면서 이동한다.
             int nextRow = r + directions[i][0];
             int nextColumn = c + directions[i][1];
-            System.out.printf("r:%d c:%d\n", nextRow, nextColumn);
-            if (nextRow > 0 && nextRow < directions.length && nextColumn > 0 && nextColumn < directions.length){
+            if (nextRow > 0 && nextRow < visited.length && nextColumn > 0 && nextColumn < visited.length){
                 if(map[r][c] == map[nextRow][nextColumn] && visited[nextRow][nextColumn] == 0){
-                    // 같은 숫자면 Stack에 넣는다.
-                    System.out.printf("---cnt:%d---\n", count);
                     count += dfs(nextRow, nextColumn, visited, map);
                 }
             }
@@ -59,17 +61,24 @@ public class Codeup2605 {
         int n = 7;
         int[][] map = new int[n + 1][n + 1];
         int[][] visited = new int[n + 1][n + 1];
-        map = initMap(7, 7);
+//        map = initMap(n, n);
 
-        print2xArr(map);
+        Scanner sc = new Scanner(System.in);
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                map[i][j] = sc.nextInt();
+            }
+        }
+
+//        print2xArr(map);
 
         int answer = 0;
         for (int r = 1; r <= n; r++) {
             for (int c = 1; c <= n; c++) {
                 if(visited[r][c] == 0){
                     int cnt = dfs(r, c, visited, map);
-//                    print2xArr(visited);
-                    if(cnt >= 3) System.out.printf("cnt:%d answer:%d\n", cnt, ++answer);
+//                    if(cnt >= 3) System.out.printf("cnt:%d answer:%d\n", cnt, ++answer);
+                    if(cnt >= 3) answer++;
                 }
             }
         }
