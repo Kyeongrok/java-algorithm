@@ -15,7 +15,6 @@ public class GCDStep3 {
         System.out.println(gcd(a, b));
     }
     public static int gcd(int a, int b) {
-
         // a > 1인 동안 반복 해줍니다.
         // 나머지가 1이 나올 때 까지 반복한다는 뜻 입니다.
         while(a > 1){
