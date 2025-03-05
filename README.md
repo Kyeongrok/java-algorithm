@@ -26,7 +26,7 @@
   - n까지 합
   - 팩토리얼
   - 피보나치 수열
-  - GCD
+  - [GCD](documents/GCD.md)
   - 알파벳 조합
 - Dynamic Programming(다이내믹 프로그래밍)
   - LCS
